@@ -1,0 +1,76 @@
+﻿@model InvoiceDashViewModel
+
+<div>
+    <h4>Invoice Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice.CustomerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.CustomerId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice.InvoiceDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.InvoiceDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice.DueDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.DueDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice.Message)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.Message)
+        </dd>
+    </dl>
+</div>
+<hr>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="invoiceline-tab" data-toggle="tab" href="#invoiceline" role="tab" aria-controls="invoiceline" aria-selected="true">Invoice Line</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="creditnote-tab" data-toggle="tab" href="#creditnote" role="tab" aria-controls="creditnote" aria-selected="false">Credit Note</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="credit-tab" data-toggle="tab" href="#credit" role="tab" aria-controls="credit" aria-selected="false">Credit</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="delayedcharge-tab" data-toggle="tab" href="#delayedcharge" role="tab" aria-controls="delayedcharge" aria-selected="false">Delayed Charge</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab" aria-controls="payment" aria-selected="false">Payment</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="estimate-tab" data-toggle="tab" href="#estimate" role="tab" aria-controls="estimate" aria-selected="false">Estimate</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="SalesReceipt-tab" data-toggle="tab" href="#SalesReceipt" role="tab" aria-controls="SalesReceipt" aria-selected="false">Sales Receipt</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="invoiceline" role="tabpanel" aria-labelledby="invoiceline-tab"><partial name="_InvoiceLineList" model="Model.InvoiceLines" /></div>
+    <div class="tab-pane fade" id="creditnote" role="tabpanel" aria-labelledby="creditnote-tab"><partial name="_CreditNoteList" model="Model.CreditNotes" /></div>
+    <div class="tab-pane fade" id="credit" role="tabpanel" aria-labelledby="credit-tab"><partial name="_CreditList" model="Model.CreditListViewModel" /></div>
+    <div class="tab-pane fade" id="delayedcharge" role="tabpanel" aria-labelledby="delayedcharge-tab"><partial name="_DelayedChargeList" model="Model.DelayedCharge" /></div>
+    <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab"><partial name="_PaymentList" model="Model.Payments" /></div>
+    <div class="tab-pane fade" id="estimate" role="tabpanel" aria-labelledby="estimate-tab"><partial name="_EstimateList" model="Model.Estimates" /></div>
+    <div class="tab-pane fade" id="SalesReceipt" role="tabpanel" aria-labelledby="SalesReceipt-tab"><partial name="_SalesReceiptList" model="Model.SalesReceipts" /></div>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

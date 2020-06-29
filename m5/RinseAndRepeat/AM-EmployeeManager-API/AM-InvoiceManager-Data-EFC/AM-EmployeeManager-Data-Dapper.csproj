@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AM_CustomerManager_Data_EFC</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="IServiceCollectionExtensions.cs~RF8e112.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AM-InvoiceManager-Core\AM-EmployeeManager-Core.csproj" />
+  </ItemGroup>
+
+</Project>

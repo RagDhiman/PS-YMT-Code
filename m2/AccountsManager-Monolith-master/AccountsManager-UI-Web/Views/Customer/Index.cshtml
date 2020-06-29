@@ -1,0 +1,106 @@
+﻿@model IEnumerable<AccountsManager_UI_Web.Models.CustomerIndexModel>
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h1>Customers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditAgreement)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditAgreement)
+            </td>
+            <td>
+                <a asp-area="" asp-action="Edit" asp-route-Id="@item.Id">Edit</a> |
+                <a asp-controller="CustomerDash" asp-area="" asp-action="Main" asp-route-Id="@item.Id">Details</a> |
+                <a asp-area="" asp-action="Delete" asp-route-Id="@item.Id">Delete</a> |
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <hr />
+    <a asp-action="Index">Back to List</a>
+</div>
+<hr>
+<div class="card-columns">
+    <div class="col-xl-13">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">2</h5>
+                <p class="card-text">New customers</p>
+                @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-13">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">6</h5>
+                <p class="card-text">Customers pending invoice</p>
+                @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-13">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">4</h5>
+                <p class="card-text">Archived customers</p>
+                @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+            </div>
+        </div>
+    </div>
+</div>

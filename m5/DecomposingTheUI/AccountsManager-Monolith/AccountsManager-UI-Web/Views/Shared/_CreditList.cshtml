@@ -1,0 +1,59 @@
+﻿@model CreditListViewModel
+<br>
+<p>
+    <a asp-controller="Credit" asp-action="Create" asp-route-invoiceId="@Model.InvoiceId">New Credit</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.CreditDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.CreditAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.AccountNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.SortCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditIndexModel.HasCreditAgreement)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Credits) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SortCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasCreditAgreement)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

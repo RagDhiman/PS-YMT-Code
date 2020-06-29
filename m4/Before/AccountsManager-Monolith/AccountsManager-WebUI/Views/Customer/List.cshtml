@@ -1,0 +1,13 @@
+﻿@model CustomerListViewModel
+
+<h1>@Model.Company</h1>
+@foreach (var customer in Model.Customers)
+{
+    <div>
+        <h2>@customer.FirstName</h2>
+        <h3>@customer.LastName</h3>
+        <h4>
+            <a asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId">@customer.FirstName</a>
+        </h4>
+    </div>
+}

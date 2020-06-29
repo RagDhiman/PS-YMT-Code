@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AM_BackendForFrontend_Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AM-BackendForFrontend-Data\AM-BackendForFrontend-Data.csproj" />
+  </ItemGroup>
+
+</Project>

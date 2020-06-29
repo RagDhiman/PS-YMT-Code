@@ -1,0 +1,99 @@
+﻿@model IEnumerable<AccountsManager_UI_Web.Models.InvoiceIndexModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Invoices</title>
+</head>
+<body>
+    <h1>Invoices</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InvoiceDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DueDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Message)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InvoiceDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DueDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Dash", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <hr />
+        <a asp-action="Index">Back to List</a>
+    </div>
+    <hr>
+    <div class="card-columns">
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">10</h5>
+                    <p class="card-text">Paid invoices</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">5</h5>
+                    <p class="card-text">Payments processing</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">2</h5>
+                    <p class="card-text">Overdue invoices</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

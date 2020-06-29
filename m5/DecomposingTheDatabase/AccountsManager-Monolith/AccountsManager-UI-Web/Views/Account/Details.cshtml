@@ -1,0 +1,102 @@
+﻿@model AccountsManager_UI_Web.Models.AccountDetailModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Your Account</title>
+</head>
+<body>
+
+    <div>
+        <h1>Your Account Details</h1>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NoOfUserLicences)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NoOfUserLicences)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RenewalDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RenewalDate)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CompanyEmail)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CompanyEmail)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CompanySMSSender)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CompanySMSSender)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NewCustomerCRMWebhook)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NewCustomerCRMWebhook)
+            </dd>
+
+
+        </dl>
+    </div>
+    <hr />
+    <h4>Your Subscriptions:</h4><br />
+    <div class="card" style="width: 50%;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/customer_Blue.png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Customer Management: <b>Expires in 230 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/document-money_Blue (1).png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Invoice Management: <b>Expires in 434 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/empty-podium_Blue.png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Employee Management: <b>Expires in 456 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/shopping-bag_Blue.png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Expense Management: <b>Expires in 345 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/flatbed-full_Blue.png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Supplier Management: <b>Expires in 234 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+            <li class="list-group-item">
+                <img style="float:left;" src="~/images/message_Blue.png" width="45" alt="" class="d-inline-block align-middle mr-2" />
+                <p>Notification Management: <b>Expires in 123 days. </b></p>
+                <a href="#">Renew</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

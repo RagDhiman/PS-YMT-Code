@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Favorites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <folders />
+  <favorites>
+    <Favorite>
+      <name>InvoiceController.cs</name>
+      <path>AccountsManager-UI-Web\Controllers\InvoiceController.cs</path>
+      <absolutePath>C:\Users\Rag\source\repos\AccountsManager-Monolith\AccountsManager-UI-Web\Controllers\InvoiceController.cs</absolutePath>
+      <position>
+        <line>34</line>
+        <column>10</column>
+        <lineHash>QqKbj+5rvocuXtcf4j44LL8s8eXA5U069DrZfx/b/DI=</lineHash>
+      </position>
+    </Favorite>
+    <Favorite>
+      <name>AccountManagerContext.cs</name>
+      <path>AccountsManager-Data\AccountManagerContext.cs</path>
+      <absolutePath>C:\Users\Rag\source\repos\AccountsManager-Monolith\AccountsManager-Data\AccountManagerContext.cs</absolutePath>
+    </Favorite>
+  </favorites>
+</Favorites>

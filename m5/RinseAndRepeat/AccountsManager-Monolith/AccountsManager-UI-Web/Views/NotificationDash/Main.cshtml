@@ -1,0 +1,77 @@
+﻿@model NotificationDashViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div>
+        <h1>Notifications</h1>
+        <hr />
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="Emails-tab" data-toggle="tab" href="#Emails" role="tab" aria-controls="Emails" aria-selected="true">Email Log</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="SMS-tab" data-toggle="tab" href="#SMS" role="tab" aria-controls="SMS" aria-selected="false">SMS Log</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="WebHookPosts-tab" data-toggle="tab" href="#WebHookPosts" role="tab" aria-controls="WebHookPosts" aria-selected="false">Web Hook Log</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="Emails" role="tabpanel" aria-labelledby="Emails-tab">
+                <br />
+                <partial name="_NotificationEmailList" model="Model.Emails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="SMS" role="tabpanel" aria-labelledby="SMS-tab">
+                <br />
+                <partial name="_NotificationSMSList" model="Model.SMSs" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="WebHookPosts" role="tabpanel" aria-labelledby="WebHookPosts-tab">
+                <br />
+                <partial name="_NotificationWebHookPostsList" model="Model.WebhookPosts" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div>
+        <hr />
+        <a asp-action="Index">Back to List</a>
+    </div>
+    <hr>
+    <div class="card-columns">
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">324</h5>
+                    <p class="card-text">Receipts received</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">23</h5>
+                    <p class="card-text">Pending receipts</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-13">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">4</h5>
+                    <p class="card-text">Failed receipts</p>
+                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

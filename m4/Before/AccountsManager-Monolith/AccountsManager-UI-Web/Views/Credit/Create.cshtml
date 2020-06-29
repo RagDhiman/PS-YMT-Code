@@ -1,0 +1,78 @@
+﻿@model AccountsManager_UI_Web.Models.CreditEditModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Credit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group"  hidden="hidden">
+                <label asp-for="InvoiceId" class="control-label"></label>
+                <input asp-for="InvoiceId" class="form-control" />
+                <span asp-validation-for="InvoiceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditDate" class="control-label"></label>
+                <input asp-for="CreditDate" class="form-control" />
+                <span asp-validation-for="CreditDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditAmount" class="control-label"></label>
+                <input asp-for="CreditAmount" class="form-control" />
+                <span asp-validation-for="CreditAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="ProductCredit" class="control-label"></label>
+                <input asp-for="ProductCredit" class="form-control" />
+                <span asp-validation-for="ProductCredit" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="AccountNo" class="control-label"></label>
+                <input asp-for="AccountNo" class="form-control" />
+                <span asp-validation-for="AccountNo" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="SortCode" class="control-label"></label>
+                <input asp-for="SortCode" class="form-control" />
+                <span asp-validation-for="SortCode" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check" hidden="hidden">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HasCreditAgreement" /> @Html.DisplayNameFor(model => model.HasCreditAgreement)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿@model CustomerDashViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div>
+        <h3>Customer Dashboard</h3>
+        <hr />
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="Details-tab" data-toggle="tab" href="#Details" role="tab" aria-controls="Details" aria-selected="true">Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Address-tab" data-toggle="tab" href="#Address" role="tab" aria-controls="Address" aria-selected="false">Address</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="TaxInfo-tab" data-toggle="tab" href="#TaxInfo" role="tab" aria-controls="TaxInfo" aria-selected="false">Tax Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="PaymentBilling-tab" data-toggle="tab" href="#PaymentBilling" role="tab" aria-controls="PaymentBilling" aria-selected="false">Payment Billing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Notes-tab" data-toggle="tab" href="#Notes" role="tab" aria-controls="Notes" aria-selected="false">Notes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="BankAccounts-tab" data-toggle="tab" href="#BankAccounts" role="tab" aria-controls="BankAccounts" aria-selected="false">Bank Accounts</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="Details" role="tabpanel" aria-labelledby="Details-tab">
+                <br />
+                <partial name="_CustomerDetails" model="Model.CustomerDetails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="Address" role="tabpanel" aria-labelledby="Address-tab">
+                <br />
+                <partial name="_AddressList" model="Model.AddressesDetails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="TaxInfo" role="tabpanel" aria-labelledby="TaxInfo-tab">
+                <br />
+                <partial name="_TaxInfoList" model="Model.TaxInfoDetails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="PaymentBilling" role="tabpanel" aria-labelledby="PaymentBilling-tab">
+                <br />
+                <partial name="_PaymentBillingList" model="Model.PaymentBillingDetails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="Notes" role="tabpanel" aria-labelledby="Notes-tab">
+                <br />
+                <partial name="_NoteList" model="Model.NoteDetails" />
+                <br />
+            </div>
+            <div class="tab-pane fade" id="BankAccounts" role="tabpanel" aria-labelledby="BankAccounts-tab">
+                <br />
+                <partial name="_BankAccountList" model="Model.BankAccounts" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div>
+        <hr />
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

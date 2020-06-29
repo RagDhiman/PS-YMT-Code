@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AddressIndexModel>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Street)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CityTown)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.County)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityTown)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.County)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        <a asp-area="" asp-action="Edit" asp-route-Id="@item.Id">Edit</a> |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        <a asp-area="" asp-action="Delete" asp-route-Id="@item.Id">Delete</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
